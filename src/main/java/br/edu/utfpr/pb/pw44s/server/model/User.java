@@ -1,56 +1,76 @@
 package br.edu.utfpr.pb.pw44s.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 
 @Entity
 @Table(name = "tb_user")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Getter @Setter
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    @NotNull(message = "{utfpr.pw44s.user.username.notNull}")
+
+    @NotNull (message = "{utfpr.pw44s.user.username.notNull}")
     @Size(min = 4, max = 255)
     private String username;
 
-    @NotNull (message = "O campo displayName não pode ser nulo")
-    @Size(min = 4, max = 255)
+    @NotNull
+    @Size(min = 4, max = 50)
     private String displayName;
 
     @NotNull
-    @Size (min = 6)
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
+    @Size(min = 6)
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$", message = "{utfpr.pw44s.server.user.password.Pattern}")
     private String password;
 
-    public Long getId() {
-        return id;
+    @Override
+    @Transient
+    @JsonIgnore
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return AuthorityUtils.createAuthorityList("ROLE_USER");
     }
-    public String getUsername() {
-        return username;
+
+    @Override
+    @Transient
+    @JsonIgnore
+    public boolean isAccountNonExpired() {
+        return true;
     }
-    public String getDisplayName() {
-        return displayName;
+
+    @Override
+    @Transient
+    @JsonIgnore
+    public boolean isAccountNonLocked() {
+        return true;
     }
-    public String getPassword() {
-        return password;
+
+    @Override
+    @Transient
+    @JsonIgnore
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
-    public void setId(Long id) {
-        this.id = id;
+
+    @Override
+    @Transient
+    @JsonIgnore
+    public boolean isEnabled() {
+        return true;
     }
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
+
 }

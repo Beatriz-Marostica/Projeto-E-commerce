@@ -9,10 +9,17 @@ Cliente Web em React para interface do usuário.
 Funcionalidades principais para a primeira entrega (backend):
 
 Lista de categorias
+
 Lista de produtos 
+
 Produto pelo ID
+
 Cadastro de Usuário
+
 Autenticação
+
 Cadastro de Endereços (do usuário autenticado)
+
 Cadastro de Pedidos (do usuário autenticado)
+
 Lista de Pedidos (do usuário autenticado)

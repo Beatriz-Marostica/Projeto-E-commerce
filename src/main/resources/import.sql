@@ -1,6 +1,6 @@
 --user
-INSERT INTO tb_user(display_name, username, password) VALUES ('Teste1', 'teste1','eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0ZTEiLCJleHAiOjE3NTkxNjg0NTl9.-ZJkidlBYHmwPirwJLGcKS-vqyLC2_4lgQhxtQhbtoZagBij6-vHq0zTXhnoaUUCsAwNMBq4O7QU6tbIBwY7MQ');
-INSERT INTO tb_user(display_name, username, password) VALUES ('Teste2', 'teste2','eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0ZTIiLCJleHAiOjE3NTkxOTMwMjJ9.JX61hsXqkhMvHTcnuePCliNec7ZQi7S2gS_4S9u_5wrdjMowwVfOhj-s1-2N-nXFu7MnVwjcEAU3FDqttkYkKA');
+INSERT INTO tb_user(display_name, username, password) VALUES ('Teste1', 'teste1','eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0ZTEiLCJleHAiOjE3NTkyNjg2MTJ9.yKYMxrkOj1biqLpSF9GmLKeOyEh9PEpG4ooBia79MY_MdS55ctUYUJN4mNGR8aeErPeGzIG_3TlVE2iQ8UO_mw');
+INSERT INTO tb_user(display_name, username, password) VALUES ('Teste2', 'teste2','eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0ZTIiLCJleHAiOjE3NTkyNjg2Njd9.dXkF82gVEA-wga2uC0bv1cQwZoZhQScLOGgZJvgIrL9HXew9m0c1yZPC2391XOj_3keo-C49WuMoh5UK89e9Fg');
 
 
 -- categorias

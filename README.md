@@ -3,8 +3,11 @@ Projeto E-commerce – Disciplina de Programação para Web
 
 
 A solução é dividida em duas camadas:
+
 API REST em Spring Boot para gerenciamento de produtos, pedidos, usuários e autenticação.
+
 Cliente Web em React para interface do usuário.
+
 
 Funcionalidades principais para a primeira entrega (backend):
 
